@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo "Using ${env.BADGRADES_SECRET) for badgrades-site play application secret"
+                echo "Using ${env.BADGRADES_SECRET} for badgrades-site play application secret"
                 sh 'tar -xvzf target/universal/badgrades-1.0.tgz'
                 sh "nohup badgrades-1.0/bin/badgrades -Dplay.http.secret.key=${env.BADGRADES_SECRET} &"
             }
