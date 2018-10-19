@@ -15,8 +15,11 @@ pipeline {
             }
         }
         stage('Deploy') {
-            steps {
+            agent {
                 docker { image 'badgrades:1.0' }
+            }
+            steps {
+                echo "I am inside a docker container!"
             }
         }
     }
