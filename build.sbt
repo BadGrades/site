@@ -14,4 +14,4 @@ libraryDependencies ++= Seq( jdbc , ehcache , ws , specs2 % Test , guice )
 
 unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )  
 
-      
+dockerExposedPorts in Docker := Seq(9000, 9443)
